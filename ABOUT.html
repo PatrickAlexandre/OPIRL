@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Metabolism Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .language-select {
+            float: right;
+            margin-top: 10px;
+        }
+        .showcase {
+            min-height: 400px;
+            background: url('showcase.jpg') no-repeat 0 -400px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        .showcase p {
+            font-size: 20px;
+        }
+        .main-content {
+            padding: 20px;
+            background: #ffffff;
+        }
+        .main-content h2 {
+            color: #35424a;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            const language = document.getElementById("language").value;
+            const elements = document.querySelectorAll(".text");
+            elements.forEach(element => {
+                element.style.display = "none";
+            });
+            const selectedElements = document.querySelectorAll(`.text.${language}`);
+            selectedElements.forEach(element => {
+                element.style.display = "block";
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">MBTI</span> Metabolism Monitor</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#who">Who We Are</a></li>
+                    <li><a href="#vision">Our Vision</a></li>
+                    <li><a href="#offer">What We Offer</a></li>
+                    <li><a href="#commitment">Our Commitment</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                </ul>
+            </nav>
+            <div class="language-select">
+                <label for="language">Language:</label>
+                <select id="language" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Português</option>
+                    <option value="ru">Русский</option>
+                    <option value="zh">中文</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <section class="showcase">
+        <div class="container">
+            <h1>Welcome to MBTI Metabolism Monitor</h1>
+            <p>Your journey to understanding and optimizing your wellness starts here.</p>
+        </div>
+    </section>
+
+    <div class="container main-content">
+        <section id="about">
+            <h2>About Us</h2>
+            <p class="text en">🇬🇧 Welcome to MBTI Metabolism Monitor, your go-to platform for exploring the intricate connections between personality types, genetic information, and metabolic health. Our mission is to provide a comprehensive, user-friendly tool that helps you understand and optimize your wellness journey.</p>
+            <p class="text fr" style="display:none;">🇫🇷 Bienvenue sur MBTI Metabolism Monitor, votre plateforme de référence pour explorer les connexions complexes entre les types de personnalité, les informations génétiques et la santé métabolique. Notre mission est de fournir un outil complet et convivial qui vous aide à comprendre et optimiser votre parcours de bien-être.</p>
+            <p class="text pt" style="display:none;">🇵🇹 Bem-vindo ao MBTI Metabolism Monitor, a sua plataforma de referência para explorar as conexões complexas entre tipos de personalidade, informações genéticas e saúde metabólica. Nossa missão é fornecer uma ferramenta abrangente e fácil de usar que o ajude a entender e otimizar sua jornada de bem-estar.</p>
+            <p class="text ru" style="display:none;">🇷🇺 Добро пожаловать в MBTI Metabolism Monitor, вашу основную платформу для изучения сложных взаимосвязей между типами личности, генетической информацией и метаболическим здоровьем. Наша миссия - предоставить комплексный, удобный инструмент, который поможет вам понять и оптимизировать ваш путь к благополучию.</p>
+            <p class="text zh" style="display:none;">🇨🇳 欢迎来到 MBTI Metabolism Monitor，这是您探索人格类型、基因信息和代谢健康之间复杂联系的首选平台。我们的使命是提供一个全面、用户友好的工具，帮助您理解和优化您的健康之旅。</p>
+            <p class="text hi" style="display:none;">🇮🇳 MBTI Metabolism Monitor में आपका स्वागत है, आपका जाने-माने प्लेटफार्म जहां आप व्यक्तित्व प्रकारों, आनुवांशिक जानकारी और चयापचय स्वास्थ्य के बीच जटिल कनेक्शनों का अन्वेषण कर सकते हैं। हमारा मिशन एक व्यापक, उपयोगकर्ता-मित्रवत उपकरण प्रदान करना है जो आपको आपकी वेलनेस यात्रा को समझने और अनुकूलित करने में मदद करता है।</p>
+        </section>
+
+        <section id="who">
+            <h2>Who We Are</h2>
+            <p class="text en">🇬🇧 We are a team of passionate professionals from diverse fields including psychology, genetics, nutrition, and software development. Our combined expertise allows us to create an innovative application that brings together the science of MBTI personality types, chromosome analysis, and metabolic calculations.</p>
+            <p class="text fr" style="display:none;">🇫🇷 Nous sommes une équipe de professionnels passionnés de divers domaines, notamment la psychologie, la génétique, la nutrition et le développement de logiciels. Notre expertise combinée nous permet de créer une application innovante qui rassemble la science des types de personnalité MBTI, l'analyse des chromosomes et les calculs métaboliques.</p>
+            <p class="text pt" style="display:none;">🇵🇹 Somos uma equipe de profissionais apaixonados de diversas áreas, incluindo psicologia, genética, nutrição e desenvolvimento de software. Nossa experiência combinada nos permite criar um aplicativo inovador que reúne a ciência dos tipos de personalidade MBTI, análise de cromossomos e cálculos metabólicos.</p>
+            <p class="text ru" style="display:none;">🇷🇺 Мы - команда увлеченных профессионалов из различных областей, включая психологию, генетику, питание и разработку программного обеспечения. Наша совокупная экспертиза позволяет нам создать инновационное приложение, объединяющее науку о типах личности MBTI, анализ хромосом и метаболические расчеты.</p>
+            <p class="text zh" style="display:none;">🇨🇳 我们是一支由心理学、遗传学、营养学和软件开发等多领域的热情专业人士组成的团队。我们结合的专业知识使我们能够创建一个创新的应用程序，将 MBTI 人格类型科学、染色体分析和代谢计算结合在一起。</p>
+            <p class="text hi" style="display:none;">🇮🇳 हम मनोविज्ञान, आनुवांशिकी, पोषण और सॉफ्टवेयर विकास सहित विभिन्न क्षेत्रों के उत्साही पेशेवरों की एक टीम हैं। हमारा संयुक्त विशेषज्ञता हमें MBTI व्यक्तित्व प्रकारों, गुणसूत्र विश्लेषण और चयापचय गणनाओं के विज्ञान को एक साथ लाने वाला एक अभिनव अनुप्रयोग बनाने की अनुमति देता है।</p>
+        </section>
+
+        <section id="vision">
+            <h2>Our Vision</h2>
+            <p class="text en">🇬🇧 Our vision is to empower individuals with knowledge about their unique genetic and psychological makeup. We believe that understanding your MBTI type, genetic profile, and metabolic rate can lead to more personalized and effective health and wellness strategies.</p>
+            <p class="text fr" style="display:none;">🇫🇷 Notre vision est d'autonomiser les individus avec des connaissances sur leur composition génétique et psychologique unique. Nous croyons que comprendre votre type MBTI, votre profil génétique et votre taux métabolique peut mener à des stratégies de santé et de bien-être plus personnalisées et efficaces.</p>
+            <p class="text pt" style="display:none;">🇵🇹 Nossa visão é capacitar os indivíduos com conhecimento sobre sua composição genética e psicológica única. Acreditamos que compreender seu tipo MBTI, perfil genético e taxa metabólica pode levar a estratégias de saúde e bem-estar mais personalizadas e eficazes.</p>
+            <p class="text ru" style="display:none;">🇷🇺 Наша цель - предоставить людям знания о их уникальном генетическом и психологическом составе. Мы верим, что понимание вашего типа MBTI, генетического профиля и метаболического уровня может привести к более персонализированным и эффективным стратегиям здоровья и благополучия.</p>
+            <p class="text zh" style="display:none;">🇨🇳 我们的愿景是通过了解个人独特的遗传和心理构成来赋予个人知识。我们相信，了解您的 MBTI 类型、基因概况和代谢率可以导致更个性化和有效的健康和健康策略。</p>
+            <p class="text hi" style="display:none;">🇮🇳 हमारा दृष्टिकोण व्यक्तियों को उनके अद्वितीय आनुवांशिक और मनोवैज्ञानिक संरचना के बारे में ज्ञान से सशक्त करना है। हमें विश्वास है कि अपने MBTI प्रकार, आनुवांशिक प्रोफ़ाइल और चयापचय दर को समझना अधिक व्यक्तिगत और प्रभावी स्वास्थ्य और कल्याण रणनीतियों की ओर ले जा सकता है।</p>
+        </section>
+
+        <section id="offer">
+            <h2>What We Offer</h2>
+            <p class="text en">🇬🇧 MBTI Analysis:</p>
+            <ul class="text en">
+                <li>Discover your MBTI personality type through a detailed selector.</li>
+                <li>Learn about the unique traits, strengths, and areas for growth associated with your type.</li>
+                <li>Understand how your personality influences your daily habits and interactions.</li>
+            </ul>
+            <p class="text fr" style="display:none;">🇫🇷 Analyse MBTI:</p>
+            <ul class="text fr" style="display:none;">
+                <li>Découvrez votre type de personnalité MBTI grâce à un sélecteur détaillé.</li>
+                <li>Découvrez les traits uniques, les forces et les domaines de croissance associés à votre type.</li>
+                <li>Comprenez comment votre personnalité influence vos habitudes quotidiennes et vos interactions.</li>
+            </ul>
+            <p class="text pt" style="display:none;">🇵🇹 Análise MBTI:</p>
+            <ul class="text pt" style="display:none;">
+                <li>Descubra seu tipo de personalidade MBTI através de um seletor detalhado.</li>
+                <li>Conheça as características únicas, pontos fortes e áreas de crescimento associadas ao seu tipo.</li>
+                <li>Entenda como sua personalidade influencia seus hábitos diários e interações.</li>
+            </ul>
+            <p class="text ru" style="display:none;">🇷🇺 Анализ MBTI:</p>
+            <ul class="text ru" style="display:none;">
+                <li>Определите ваш тип личности MBTI с помощью детального селектора.</li>
+                <li>Узнайте о уникальных чертах, сильных сторонах и зонах роста, связанных с вашим типом.</li>
+                <li>Поймите, как ваша личность влияет на ваши повседневные привычки и взаимодействия.</li>
+            </ul>
+            <p class="text zh" style="display:none;">🇨🇳 MBTI 分析：</p>
+            <ul class="text zh" style="display:none;">
+                <li>通过详细的选择器发现您的 MBTI 人格类型。</li>
+                <li>了解与您的类型相关的独特特征、优势和成长领域。</li>
+                <li>了解您的性格如何影响您的日常习惯和互动。</li>
+            </ul>
+            <p class="text hi" style="display:none;">🇮🇳 MBTI विश्लेषण:</p>
+            <ul class="text hi" style="display:none;">
+                <li>विस्तृत चयनकर्ता के माध्यम से अपने MBTI व्यक्तित्व प्रकार की खोज करें।</li>
+                <li>अपने प्रकार से जुड़े अद्वितीय लक्षण, ताकत और विकास के क्षेत्रों के बारे में जानें।</li>
+                <li>समझें कि आपकी व्यक्तित्व आपके दैनिक आदतों और इंटरैक्शन को कैसे प्रभावित करती है।</li>
+            </ul>
+
+            <p class="text en">🇬🇧 Chromosome Explorer:</p>
+            <ul class="text en">
+                <li>Visualize your chromosome information in an engaging, interactive format.</li>
+                <li>Gain insights into how your genetic makeup impacts your overall health.</li>
+            </ul>
+            <p class="text fr" style="display:none;">🇫🇷 Explorateur de Chromosomes:</p>
+            <ul class="text fr" style="display:none;">
+                <li>Visualisez vos informations chromosomiques dans un format interactif et engageant.</li>
+                <li>Obtenez des informations sur la façon dont votre composition génétique impacte votre santé globale.</li>
+            </ul>
+            <p class="text pt" style="display:none;">🇵🇹 Explorador de Cromossomos:</p>
+            <ul class="text pt" style="display:none;">
+                <li>Visualize suas informações cromossômicas em um formato interativo e envolvente.</li>
+                <li>Obtenha insights sobre como sua composição genética impacta sua saúde geral.</li>
+            </ul>
+            <p class="text ru" style="display:none;">🇷🇺 Исследователь Хромосом:</p>
+            <ul class="text ru" style="display:none;">
+                <li>Визуализируйте информацию о ваших хромосомах в увлекательном, интерактивном формате.</li>
+                <li>Получите представление о том, как ваш генетический состав влияет на ваше общее здоровье.</li>
+            </ul>
+            <p class="text zh" style="display:none;">🇨🇳 染色体探索者：</p>
+            <ul class="text zh" style="display:none;">
+                <li>以吸引人、互动的格式可视化您的染色体信息。</li>
+                <li>了解您的遗传构成如何影响您的整体健康。</li>
+            </ul>
+            <p class="text hi" style="display:none;">🇮🇳 गुणसूत्र एक्सप्लोरर:</p>
+            <ul class="text hi" style="display:none;">
+                <li>आकर्षक, इंटरैक्टिव प्रारूप में अपने गुणसूत्र जानकारी को विज़ुअलाइज़ करें।</li>
+                <li>जानें कि आपकी आनुवांशिक संरचना आपके समग्र स्वास्थ्य को कैसे प्रभावित करती है।</li>
+            </ul>
+
+            <p class="text en">🇬🇧 Metabolic Rate Calculator:</p>
+            <ul class="text en">
+                <li>Calculate your Basal Metabolic Rate (BMR) based on your age, weight, height, and activity level.</li>
+                <li>Receive personalized recommendations to optimize your daily energy expenditure.</li>
+            </ul>
+            <p class="text fr" style="display:none;">🇫🇷 Calculateur de Taux Métabolique:</p>
+            <ul class="text fr" style="display:none;">
+                <li>Calculez votre taux métabolique basal (BMR) en fonction de votre âge, de votre poids, de votre taille et de votre niveau d'activité.</li>
+                <li>Recevez des recommandations personnalisées pour optimiser votre dépense énergétique quotidienne.</li>
+            </ul>
+            <p class="text pt" style="display:none;">🇵🇹 Calculadora de Taxa Metabólica:</p>
+            <ul class="text pt" style="display:none;">
+                <li>Calcule sua Taxa Metabólica Basal (TMB) com base na sua idade, peso, altura e nível de atividade.</li>
+                <li>Receba recomendações personalizadas para otimizar seu gasto energético diário.</li>
+            </ul>
+            <p class="text ru" style="display:none;">🇷🇺 Калькулятор Метаболической Ставки:</p>
+            <ul class="text ru" style="display:none;">
+                <li>Рассчитайте свой базальный метаболический уровень (BMR) на основе вашего возраста, веса, роста и уровня активности.</li>
+                <li>Получите персонализированные рекомендации для оптимизации ежедневных энергозатрат.</li>
+            </ul>
+            <p class="text zh" style="display:none;">🇨🇳 代谢率计算器：</p>
+            <ul class="text zh" style="display:none;">
+                <li>根据您的年龄、体重、身高和活动水平计算您的基础代谢率 (BMR)。</li>
+                <li>接收个性化建议，以优化您的日常能量消耗。</li>
+            </ul>
+            <p class="text hi" style="display:none;">🇮🇳 मेटाबॉलिक रेट कैलकुलेटर:</p>
+            <ul class="text hi" style="display:none;">
+                <li>अपनी आयु, वजन, ऊंचाई और गतिविधि स्तर के आधार पर अपने बेसल मेटाबॉलिक रेट (BMR) की गणना करें।</li>
+                <li>अपने दैनिक ऊर्जा व्यय को अनुकूलित करने के लिए व्यक्तिगत सिफारिशें प्राप्त करें।</li>
+            </ul>
+
+            <p class="text en">🇬🇧 Life Expectancy Tracker:</p>
+            <ul class="text en">
+                <li>Estimate your life expectancy based on your current health metrics and lifestyle choices.</li>
+                <li>Track your progress and make informed decisions to enhance your longevity.</li>
+            </ul>
+            <p class="text fr" style="display:none;">🇫🇷 Suivi de l'Espérance de Vie:</p>
+            <ul class="text fr" style="display:none;">
+                <li>Estimez votre espérance de vie en fonction de vos mesures de santé actuelles et de vos choix de vie.</li>
+                <li>Suivez vos progrès et prenez des décisions éclairées pour améliorer votre longévité.</li>
+            </ul>
+            <p class="text pt" style="display:none;">🇵🇹 Rastreador de Expectativa de Vida:</p>
+            <ul class="text pt" style="display:none;">
+                <li>Estime sua expectativa de vida com base em suas métricas de saúde atuais e escolhas de estilo de vida.</li>
+                <li>Acompanhe seu progresso e tome decisões informadas para melhorar sua longevidade.</li>
+            </ul>
+            <p class="text ru" style="display:none;">🇷🇺 Трекер Ожидаемой Продолжительности Жизни:</p>
+            <ul class="text ru" style="display:none;">
+                <li>Оцените вашу ожидаемую продолжительность жизни на основе текущих показателей здоровья и жизненного выбора.</li>
+                <li>Отслеживайте свой прогресс и принимайте обоснованные решения для повышения вашей долговечности.</li>
+            </ul>
+            <p class="text zh" style="display:none;">🇨🇳 预期寿命跟踪器：</p>
+            <ul class="text zh" style="display:none;">
+                <li>根据您当前的健康指标和生活方式选择估计您的预期寿命。</li>
+                <li>跟踪您的进度并做出明智的决定以延长您的寿命。</li>
+            </ul>
+            <p class="text hi" style="display:none;">🇮🇳 जीवन प्रत्याशा ट्रैकर:</p>
+            <ul class="text hi" style="display:none;">
+                <li>अपने वर्तमान स्वास्थ्य मेट्रिक्स और जीवन शैली विकल्पों के आधार पर अपनी जीवन प्रत्याशा का अनुमान लगाएं।</li>
+                <li>अपनी प्रगति को ट्रैक करें और अपनी दीर्घायु को बढ़ाने के लिए सूचित निर्णय लें।</li>
+            </ul>
+        </section>
+
+        <section id="commitment">
+            <h2>Our Commitment</h2>
+            <p class="text en">🇬🇧 We are committed to providing a secure, accurate, and user-friendly platform. Your privacy is our top priority, and we ensure that all your personal data is protected and handled with the utmost care.</p>
+            <p class="text fr" style="display:none;">🇫🇷 Nous nous engageons à fournir une plateforme sécurisée, précise et conviviale. Votre vie privée est notre priorité absolue, et nous veillons à ce que toutes vos données personnelles soient protégées et traitées avec le plus grand soin.</p>
+            <p class="text pt" style="display:none;">🇵🇹 Estamos comprometidos em fornecer uma plataforma segura, precisa e fácil de usar. Sua privacidade é nossa maior prioridade, e garantimos que todos os seus dados pessoais estejam protegidos e tratados com o máximo cuidado.</p>
+            <p class="text ru" style="display:none;">🇷🇺 Мы стремимся предоставлять безопасную, точную и удобную платформу. Ваша конфиденциальность является нашим главным приоритетом, и мы гарантируем, что все ваши личные данные защищены и обрабатываются с наивысшей осторожностью.</p>
+            <p class="text zh" style="display:none;">🇨🇳 我们致力于提供一个安全、准确且用户友好的平台。您的隐私是我们的首要任务，我们确保所有您的个人数据都受到保护并被极度小心地处理。</p>
+            <p class="text hi" style="display:none;">🇮🇳 हम एक सुरक्षित, सटीक और उपयोगकर्ता-मित्रवत प्लेटफार्म प्रदान करने के लिए प्रतिबद्ध हैं। आपकी गोपनीयता हमारी सर्वोच्च प्राथमिकता है, और हम सुनिश्चित करते हैं कि आपकी सभी व्यक्तिगत डेटा सुरक्षित है और अत्यंत सावधानी के साथ संभाला जाता है।</p>
+        </section>
+
+        <section id="join">
+            <h2>Join Us</h2>
+            <p class="text en">🇬🇧 Join our community of wellness enthusiasts and start your journey towards a deeper understanding of yourself. Whether you're looking to optimize your health, understand your genetic profile, or explore your personality type, MBTI Metabolism Monitor is here to guide you every step of the way.</p>
+            <p class="text fr" style="display:none;">🇫🇷 Rejoignez notre communauté d'enthousiastes du bien-être et commencez votre voyage vers une compréhension plus profonde de vous-même. Que vous cherchiez à optimiser votre santé, à comprendre votre profil génétique ou à explorer votre type de personnalité, MBTI Metabolism Monitor est là pour vous guider à chaque étape.</p>
+            <p class="text pt" style="display:none;">🇵🇹 Junte-se à nossa comunidade de entusiastas do bem-estar e comece sua jornada para uma compreensão mais profunda de si mesmo. Quer você esteja procurando otimizar sua saúde, entender seu perfil genético ou explorar seu tipo de personalidade, o MBTI Metabolism Monitor está aqui para guiá-lo em cada passo do caminho.</p>
+            <p class="text ru" style="display:none;">🇷🇺 Присоединяйтесь к нашему сообществу энтузиастов здоровья и начните свое путешествие к более глубокому пониманию себя. Независимо от того, хотите ли вы оптимизировать свое здоровье, понять свой генетический профиль или исследовать свой тип личности, MBTI Metabolism Monitor здесь, чтобы направлять вас на каждом шагу пути.</p>
+            <p class="text zh" style="display:none;">🇨🇳 加入我们的健康爱好者社区，开始深入了解自己的旅程。无论您是想优化健康、了解基因概况，还是探索您的性格类型，MBTI Metabolism Monitor 都会在每一步为您提供指导。</p>
+            <p class="text hi" style="display:none;">🇮🇳 हमारे वेलनेस उत्साही समुदाय में शामिल हों और खुद को गहराई से समझने की यात्रा शुरू करें। चाहे आप अपने स्वास्थ्य को अनुकूलित करना चाहते हों, अपने आनुवांशिक प्रोफ़ाइल को समझना चाहते हों या अपने व्यक्तित्व प्रकार का पता लगाना चाहते हों, MBTI Metabolism Monitor हर कदम पर आपका मार्गदर्शन करने के लिए यहां है।</p>
+
+            <p class="text en">🇬🇧 Feel free to reach out to us with any questions, feedback, or suggestions. We are always here to help and support you in your quest for knowledge and wellness.</p>
+            <p class="text fr" style="display:none;">🇫🇷 N'hésitez pas à nous contacter pour toute question, commentaire ou suggestion. Nous sommes toujours là pour vous aider et vous soutenir dans votre quête de connaissance et de bien-être.</p>
+            <p class="text pt" style="display:none;">🇵🇹 Sinta-se à vontade para entrar em contato conosco com quaisquer perguntas, comentários ou sugestões. Estamos sempre aqui para ajudá-lo e apoiá-lo em sua busca por conhecimento e bem-estar.</p>
+            <p class="text ru" style="display:none;">🇷🇺 Не стесняйтесь обращаться к нам с любыми вопросами, отзывами или предложениями. Мы всегда здесь, чтобы помочь и поддержать вас в вашем стремлении к знаниям и благополучию.</p>
+            <p class="text zh" style="display:none;">🇨🇳 随时联系我们提出任何问题、反馈或建议。我们始终在这里帮助和支持您追求知识和健康。</p>
+            <p class="text hi" style="display:none;">🇮🇳 किसी भी प्रश्न, प्रतिक्रिया या सुझाव के लिए हमसे संपर्क करने में संकोच न करें। हम हमेशा ज्ञान और वेलनेस के लिए आपकी खोज में मदद और समर्थन करने के लिए यहां हैं।</p>
+        </section>
+
+        <section>
+            <h2>Thank You</h2>
+            <p class="text en">🇬🇧 Thank you for choosing MBTI Metabolism Monitor. Together, let's unlock the secrets to a healthier, happier you!</p>
+            <p class="text fr" style="display:none;">🇫🇷 Merci d'avoir choisi MBTI Metabolism Monitor. Ensemble, découvrons les secrets pour une version plus saine et plus heureuse de vous-même!</p>
+            <p class="text pt" style="display:none;">🇵🇹 Obrigado por escolher o MBTI Metabolism Monitor. Juntos, vamos desvendar os segredos para um você mais saudável e feliz!</p>
+            <p class="text ru" style="display:none;">🇷🇺 Спасибо, что выбрали MBTI Metabolism Monitor. Вместе давайте откроем секреты более здорового и счастливого вас!</p>
+            <p class="text zh" style="display:none;">🇨🇳 感谢您选择 MBTI Metabolism Monitor。让我们一起揭开更健康、更幸福的您的秘密！</p>
+            <p class="text hi" style="display:none;">🇮🇳 MBTI Metabolism Monitor को चुनने के लिए धन्यवाद। साथ मिलकर, आइए एक स्वस्थ, खुशहाल आप के रहस्यों को अनलॉक करें!</p>
+        </section>
+    </div>
+</body>
+</html>
