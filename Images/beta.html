@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Reproduction</title>
+    <style>
+        /* Ajout de styles basiques pour une meilleure visualisation */
+        .game-ui {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .minimap {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+        .quests {
+            margin-top: 10px;
+        }
+        .bottom-bar {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .chat-box {
+            width: 200px;
+            height: 100px;
+            background-color: #ddd;
+        }
+        .ability-bar {
+            display: flex;
+        }
+        .ability {
+            width: 50px;
+            height: 50px;
+            background-color: #aaa;
+            margin: 0 5px;
+        }
+        .player-info, .target-info {
+            position: absolute;
+            display: flex;
+            align-items: center;
+        }
+        .player-info {
+            top: 10px;
+            left: 10px;
+        }
+        .target-info {
+            top: 10px;
+            right: 10px;
+        }
+        .portrait {
+            width: 50px;
+            height: 50px;
+            background-color: #999;
+            margin-right: 10px;
+        }
+        .health-bar {
+            width: 100px;
+            height: 20px;
+            background-color: #f00;
+        }
+        .level {
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-ui">
+        <div class="top-right">
+            <div class="minimap"></div>
+            <div class="quests">
+                <h3>Quests</h3>
+                <ul>
+                    <li>The Waking Shores Tour</li>
+                    <li>Wild Preserve Slalom</li>
+                    <li>Emberflow Flight</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <div class="chat-box"></div>
+            <div class="ability-bar">
+                <div class="ability"></div>
+                <div class="ability"></div>
+                <div class="ability"></div>
+            </div>
+        </div>
+        <div class="player-info">
+            <div class="portrait"></div>
+            <div class="health-bar" id="player-health"></div>
+            <div class="level">63</div>
+        </div>
+        <div class="target-info">
+            <div class="portrait"></div>
+            <div class="health-bar" id="target-health"></div>
+            <div class="level">70</div>
+        </div>
+    </div>
+    <script>
+        // Initialisation des barres de santé
+        let playerHealth = 100;
+        let targetHealth = 100;
+
+        // Fonction pour mettre à jour la barre de santé
+        function updateHealthBar(elementId, health) {
+            const healthBar = document.getElementById(elementId);
+            healthBar.style.width = health + 'px';
+        }
+
+        // Simuler des dégâts pour le joueur et la cible
+        function simulateDamage() {
+            playerHealth -= 10;
+            targetHealth -= 15;
+            if (playerHealth < 0) playerHealth = 0;
+            if (targetHealth < 0) targetHealth = 0;
+            updateHealthBar('player-health', playerHealth);
+            updateHealthBar('target-health', targetHealth);
+        }
+
+        // Mise à jour initiale des barres de santé
+        updateHealthBar('player-health', playerHealth);
+        updateHealthBar('target-health', targetHealth);
+
+        // Simulation de dégâts toutes les 2 secondes
+        setInterval(simulateDamage, 2000);
+    </script>
+</body>
+</html>
