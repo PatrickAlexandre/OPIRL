@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🦄 PUREVital ⚡💖🎮 ARG MMORPG💫</title>
+    <title>🧬💪 VitalQuest 🌍🏃‍♂️🎮💫 — Elevate Your Health, Embark on Epic Adventures ⧫⯎⊛⫷⫸</title>
     <link rel="icon" type="image/png" href="img/EnerGGY.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -12,11 +12,13 @@
         .hidden {
             display: none;
         }
+
         .tooltip {
             position: relative;
             display: inline-block;
             cursor: pointer;
         }
+
         .tooltip .tooltiptext {
             visibility: hidden;
             width: 200px;
@@ -27,12 +29,13 @@
             padding: 5px;
             position: absolute;
             z-index: 1;
-            bottom: 125%; 
+            bottom: 125%;
             left: 50%;
             margin-left: -100px;
             opacity: 0;
             transition: opacity 0.3s;
         }
+
         .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
@@ -54,22 +57,22 @@
                     <span class="text-sm">
                         <select id="mbti-type" class="bg-gray-800 text-white border border-gray-700 rounded px-2 py-1" onchange="changeBackgroundColor()">
                             <option value="default">Select MBTI Type</option>
-                            <option value="ISTJ">ISTJ</option>
-                            <option value="ISFJ">ISFJ</option>
-                            <option value="INFJ">INFJ</option>
-                            <option value="INTJ">INTJ</option>
-                            <option value="ISTP">ISTP</option>
-                            <option value="ISFP">ISFP</option>
-                            <option value="INFP">INFP</option>
-                            <option value="INTP">INTP</option>
-                            <option value="ESTP">ESTP</option>
-                            <option value="ESFP">ESFP</option>
-                            <option value="ENFP">ENFP</option>
-                            <option value="ENTP">ENTP</option>
-                            <option value="ESTJ">ESTJ</option>
-                            <option value="ESFJ">ESFJ</option>
-                            <option value="ENFJ">ENFJ</option>
-                            <option value="ENTJ">ENTJ</option>
+                            <option value="ISTJ">🧠 ISTJ</option>
+                            <option value="ISFJ">💖 ISFJ</option>
+                            <option value="INFJ">🌟 INFJ</option>
+                            <option value="INTJ">🔬 INTJ</option>
+                            <option value="ISTP">🛠️ ISTP</option>
+                            <option value="ISFP">🎨 ISFP</option>
+                            <option value="INFP">🌈 INFP</option>
+                            <option value="INTP">🔍 INTP</option>
+                            <option value="ESTP">⚡ ESTP</option>
+                            <option value="ESFP">🎉 ESFP</option>
+                            <option value="ENFP">🔥 ENFP</option>
+                            <option value="ENTP">💡 ENTP</option>
+                            <option value="ESTJ">📋 ESTJ</option>
+                            <option value="ESFJ">🤝 ESFJ</option>
+                            <option value="ENFJ">🌞 ENFJ</option>
+                            <option value="ENTJ">🚀 ENTJ</option>
                         </select>
                     </span>
                 </div>
@@ -91,10 +94,12 @@
             <button id="character-btn" class="bg-yellow-500 py-1 px-4 rounded text-black font-bold">PERSONNAGE</button>
             <button class="text-yellow-500">HAUTS FAITS</button>
             <button class="text-yellow-500">COLLECTIONS</button>
+            <button id="pomodoro-btn" class="bg-red-500 py-1 px-4 rounded text-white font-bold">POMODORO</button>
+            <button id="expenses-btn" class="bg-green-500 py-1 px-4 rounded text-white font-bold">DÉPENSES</button>
         </div>
 
         <!-- Game Stats Section -->
-        <div class="mt-4 bg-gray-900 p-4 rounded-lg">
+        <div id="game-stats-section" class="mt-4 bg-gray-900 p-4 rounded-lg">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="tooltip">
                     <div class="flex items-center space-x-2 bg-gray-700 p-4 rounded">
@@ -220,6 +225,9 @@
             const characterBtn = document.getElementById('character-btn');
             const energyModal = document.getElementById('energyModal');
             const closeModalBtn = document.getElementById('closeModalBtn');
+            const pomodoroBtn = document.getElementById('pomodoro-btn');
+            const expensesBtn = document.getElementById('expenses-btn');
+            const gameStatsSection = document.getElementById('game-stats-section');
 
             characterBtn.addEventListener('click', () => {
                 energyModal.classList.remove('hidden');
@@ -227,6 +235,88 @@
 
             closeModalBtn.addEventListener('click', () => {
                 energyModal.classList.add('hidden');
+            });
+
+            pomodoroBtn.addEventListener('click', () => {
+                gameStatsSection.innerHTML = '<iframe src="https://app.flocus.com/" class="w-full h-96" frameborder="0"></iframe>';
+            });
+
+            expensesBtn.addEventListener('click', () => {
+                gameStatsSection.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-gray-900">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-700 text-left text-white">Catégorie COICOP</th>
+                                    <th class="py-2 px-4 bg-gray-700 text-left text-white">Dépenses (€)</th>
+                                    <th class="py-2 px-4 bg-gray-700 text-left text-white">Part %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Alimentation et boissons non alcoolisées</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">200</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">20%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Boissons alcoolisées, tabac</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">50</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">5%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Articles d'habillement et chaussures</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">100</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">10%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Logement, eau, électricité, gaz et autres combustibles</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">500</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">50%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Meubles, articles de ménage et entretien courant</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">75</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">7.5%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Santé</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">60</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">6%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Transports</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">150</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">15%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Communications</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">40</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">4%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Loisirs et culture</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">80</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">8%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Éducation</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">30</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">3%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Restaurants et hôtels</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">120</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">12%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-t border-gray-700">Biens et services divers</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">90</td>
+                                    <td class="py-2 px-4 border-t border-gray-700">9%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `;
             });
 
             // Show modal on page load
@@ -252,7 +342,10 @@
             function calculateLifeExpectancyPercentage(gender, age) {
                 const lifeExpectancy = gender === 'male' ? 80.0 : 85.7;
                 const remainingLifeYears = Math.max(lifeExpectancy - age, 0);
-                return { percentage: (remainingLifeYears / lifeExpectancy) * 100, lifeExpectancy };
+                return {
+                    percentage: (remainingLifeYears / lifeExpectancy) * 100,
+                    lifeExpectancy
+                };
             }
 
             function calculateEnergy() {
@@ -309,7 +402,9 @@
             const replaceableImage = document.getElementById('replaceableImage');
 
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                navigator.mediaDevices.getUserMedia({
+                    video: true
+                }).then(function(stream) {
                     video.srcObject = stream;
                     video.classList.remove('hidden');
 
